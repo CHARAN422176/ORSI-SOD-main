@@ -72,7 +72,7 @@ class B2_VGG(nn.Module):
         conv5_2.add_module('relu5_3_2', nn.ReLU())
         self.conv5_2 = conv5_2
 
-        pre_train = torch.load('./model/CPD.pth')
+        pre_train = torch.load('/kaggle/input/orsi_sod_pretrain/pytorch/default/1/pre-train/CPD.pth')
         self._initialize_weights(pre_train)
 
     def forward(self, x):
