@@ -208,7 +208,7 @@ while(j<=1):
               
                 cv2.imwrite(save_pre+name, res*255)
 
-            gtDir = '/test/total/all/gt/'
+            gtDir = gt_root
             mae = MAE_Value(save_pre, gtDir)
             pr = PR_Curve(save_pre, gtDir)
             FMeasureF = pr['curScore']
