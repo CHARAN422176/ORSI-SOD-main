@@ -172,7 +172,7 @@ while(j<=1):
     #model = JRBM_ResNet(32)
     model = nn.DataParallel(model)
 
-    model.load_state_dict(torch.load('/kaggle/input/orsi_sod_pretrain/pytorch/default/2/models/models/eorssd_vgg/model-'+str(j)))
+    model.load_state_dict(torch.load('/kaggle/input/orsi_sod_pretrain/pytorch/default/2/models/models/eorssd_vgg/model-1'))
     model.cuda()
     model.eval()
     for dataset in test_datasets:
