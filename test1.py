@@ -178,7 +178,9 @@ while(j<=1):
     for dataset in test_datasets:
             
             save_pre = './results_vgg_ors/test_'+str(j)+'/'
-            
+            save_path1 = './results/'
+            if not os.path.exists(save_path1):
+                os.makedirs(save_path1)
             print('j=',j,'is_ResNet:',save_path1)
 
             image_root = dataset_path + dataset + '/images/'
