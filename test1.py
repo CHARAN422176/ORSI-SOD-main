@@ -161,8 +161,8 @@ opt = parser.parse_args()
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 
-dataset_path = '/test/total/'
-test_datasets = ['all/']
+dataset_path = '/kaggle/input/'
+test_datasets = ['eorssd/']
 
 
 j=1
@@ -183,10 +183,12 @@ while(j<=1):
                 os.makedirs(save_path1)
             print('j=',j,'is_ResNet:',save_path1)
 
-            image_root = dataset_path + dataset + '/images/'
-            gt_root = dataset_path + dataset + '/gt/'
-            edge_root = dataset_path + dataset + '/gt/'
-            gt_back_root = dataset_path + dataset + '/gt/'
+            image_root = dataset_path + dataset + 'test-images/'
+            gt_root = dataset_path + dataset + '/test-labels/'
+            # edge_root = dataset_path + dataset + '/gt/'
+            edge_root = gt_root
+            # gt_back_root = dataset_path + dataset + '/gt/'
+            gt_back_root = gt_root
             test_loader = test_dataset(image_root, gt_root, edge_root,gt_back_root, opt.testsize)
 
             for i in range(test_loader.size):
